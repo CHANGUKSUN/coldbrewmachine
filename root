@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Cold Brew Machine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        header nav a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+        }
+        section {
+            padding: 20px;
+        }
+        .bg-gray-100 {
+            background-color: #f7fafc;
+        }
+        .bg-blue-500 {
+            background-color: #4299e1;
+        }
+        .bg-gray-200 {
+            background-color: #edf2f7;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #4299e1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background-color: #4299e1;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .language-selector button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="language-selector">
+        <button onclick="setLanguage('ko')">🇰🇷 한국어</button>
+        <button onclick="setLanguage('en')">🇬🇧 English</button>
+        <button onclick="setLanguage('fr')">🇫🇷 Français</button>
+        <button onclick="setLanguage('ja')">🇯🇵 日本語</button>
+    </div>
+
+    <header>
+        <h1 id="title">첨단 콜드브루 머신</h1>
+        <nav>
+            <a href="#home" id="home">홈</a>
+            <a href="#features" id="features">특징</a>
+            <a href="#specs" id="specs">사양</a>
+            <a href="#contact" id="contact">연락처</a>
+        </nav>
+    </header>
+
+    <section class="bg-gray-100 text-center">
+        <h2 id="heroTitle">혁명적인 콜드브루 기술</h2>
+        <p id="heroSubtitle">우리의 첨단 머신으로 완벽한 콜드브루를 경험하세요</p>
+        <button class="btn" id="learnMore">더 알아보기</button>
+    </section>
+
+    <section>
+        <h2 id="keyFeatures">주요 특징</h2>
+        <ul>
+            <li id="feature1">냉장 밀폐 추출</li>
+            <li id="feature2">스프레이 물 분사 시스템</li>
+            <li id="feature3">대용량 (최대 3kg의 커피)</li>
+            <li id="feature4">정밀 제어를 위한 디지털 입력</li>
+        </ul>
+    </section>
+
+    <section class="bg-gray-200 text-center">
+        <img src="camera-icon.png" alt="Camera Icon" width="50">
+        <p id="imageCaption">콜드브루 머신 이미지</p>
+    </section>
+
+    <section>
+        <h2 id="contactUs">문의하기</h2>
+        <form class="contact-form">
+            <input type="text" id="name" placeholder="이름">
+            <input type="email" id="email" placeholder="이메일">
+            <textarea id="message" placeholder="메시지"></textarea>
+            <button type="submit" id="send">보내기</button>
+        </form>
+    </section>
+
+    <script>
+        const translations = {
+            ko: {
+                title: '첨단 콜드브루 머신',
+                home: '홈',
+                features: '특징',
+                specs: '사양',
+                contact: '연락처',
+                heroTitle: '혁명적인 콜드브루 기술',
+                heroSubtitle: '우리의 첨단 머신으로 완벽한 콜드브루를 경험하세요',
+                learnMore: '더 알아보기',
+                keyFeatures: '주요 특징',
+                feature1: '냉장 밀폐 추출',
+                feature2: '스프레이 물 분사 시스템',
+                feature3: '대용량 (최대 3kg의 커피)',
+                feature4: '정밀 제어를 위한 디지털 입력',
+                imageCaption: '콜드브루 머신 이미지',
+                contactUs: '문의하기',
+                name: '이름',
+                email: '이메일',
+                message: '메시지',
+                send: '보내기',
+            },
+            en: {
+                title: 'Advanced Cold Brew Machine',
+                home: 'Home',
+                features: 'Features',
+                specs: 'Specifications',
+                contact: 'Contact',
+                heroTitle: 'Revolutionary Cold Brew Technology',
+                heroSubtitle: 'Experience the perfect cold brew with our advanced machine',
+                learnMore: 'Learn More',
+                keyFeatures: 'Key Features',
+                feature1: 'Refrigerated, sealed extraction',
+                feature2: 'Spray water distribution system',
+                feature3: 'Large capacity (up to 3kg of coffee)',
+                feature4: 'Digital input for precise control',
+                imageCaption: 'Image of the Cold Brew Machine',
+                contactUs: 'Contact Us',
+                name: 'Name',
+                email: 'Email',
+                message: 'Message',
+                send: 'Send',
+            },
+            fr: {
+                title: 'Machine à Café Froid Avancée',
+                home: 'Accueil',
+                features: 'Caractéristiques',
+                specs: 'Spécifications',
+                contact: 'Contact',
+                heroTitle: 'Technologie Révolutionnaire de Café Froid',
+                heroSubtitle: 'Découvrez le café froid parfait avec notre machine avancée',
+                learnMore: 'En Savoir Plus',
+                keyFeatures: 'Caractéristiques Principales',
+                feature1: 'Extraction réfrigérée et scellée',
+                feature2: 'Système de distribution d\'eau par pulvérisation',
+                feature3: 'Grande capacité (jusqu\'à 3 kg de café)',
+                feature4: 'Entrée numérique pour un contrôle précis',
+                imageCaption: 'Image de la Machine à Café Froid',
+                contactUs: 'Contactez-nous',
+                name: 'Nom',
+                email: 'E-mail',
+                message: 'Message',
+                send: 'Envoyer',
+            },
+            ja: {
+                title: '先進的なコールドブリューマシン',
+                home: 'ホーム',
+                features: '特徴',
+                specs: '仕様',
+                contact: 'お問い合わせ',
+                heroTitle: '革新的なコールドブリュー技術',
+                heroSubtitle: '当社の先進的なマシンで完璧なコールドブリューを体験してください',
+                learnMore: '詳細を見る',
+                keyFeatures: '主な特徴',
+                feature1: '冷蔵密閉抽出',
+                feature2: 'スプレー式水分配システム',
+                feature3: '大容量（最大3kgのコーヒー）',
+                feature4: '精密制御のためのデジタル入力',
+                imageCaption: 'コールドブリューマシンの画像',
+                contactUs: 'お問い合わせ',
+                name: '名前',
+                email: 'メールアドレス',
+                message: 'メッセージ',
+                send: '送信',
+            }
+        };
+
+        function setLanguage(lang) {
+            const t = translations[lang];
+            document.getElementById('title').innerText = t.title;
+            document.getElementById('home').innerText = t.home;
+            document.getElementById('features').innerText = t.features;
+            document.getElementById('specs').innerText = t.specs;
+            document.getElementById('contact').innerText = t.contact;
+            document.getElementById('heroTitle').innerText = t.heroTitle;
+            document.getElementById('heroSubtitle').innerText = t.heroSubtitle;
+            document.getElementById('learnMore').innerText = t.learnMore;
+            document.getElementById('keyFeatures').innerText = t.keyFeatures;
+            document.getElementById('feature1').innerText = t.feature1;
+            document.getElementById('feature2').innerText = t.feature2;
+            document.getElementById('feature3').innerText = t.feature3;
+            document.getElementById('feature4').innerText = t.feature4;
+            document.getElementById('imageCaption').innerText = t.imageCaption;
+            document.getElementById('contactUs').innerText = t.contactUs;
+            document.getElementById('name').placeholder = t.name;
+            document.getElementById('email').placeholder = t.email;
+            document.getElementById('message').placeholder = t.message;
+            document.getElementById('send').innerText = t.send;
+        }
+
+        window.onload = () => {
+            setLanguage('ko'); // 기본 언어 설정
+        };
+    </script>
+</body>
+</html>
